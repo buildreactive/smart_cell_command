@@ -24,10 +24,10 @@ defmodule SmartCellCommand do
   def to_source(attrs) do
     quote do
       unquote(attrs["command"])
-      |> String.split("\n")
+      # |> String.split("\n")
       |> Enum.map(fn line ->
-        [cmd | args] = line |> String.split(" ")
-        {result, _} = System.cmd(cmd, args)
+      #  [cmd | args] = line |> String.split(" ")
+        {result, _} = System.shell(cmd) # , args)
         result |> String.trim()
       end)
       |> Enum.join("\n\n")
