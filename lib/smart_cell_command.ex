@@ -27,7 +27,7 @@ defmodule SmartCellCommand do
       # |> String.split("\n")
       |> Enum.map(fn line ->
       #  [cmd | args] = line |> String.split(" ")
-        {result, _} = System.shell(cmd) # , args)
+        {result, _} = System.shell(line) # , args)
         result |> String.trim()
       end)
       |> Enum.join("\n\n")
