@@ -7,7 +7,7 @@ defmodule SmartCellCommand do
 
   @impl true
   def init(attrs, ctx) do
-    {:ok, assign(ctx, command: attrs["command"] || ""), editor: [attribute: "command"]}
+    {:ok, assign(ctx, command: attrs["command"] || "")} #, editor: [attribute: "command"]}
   end
 
   @impl true
